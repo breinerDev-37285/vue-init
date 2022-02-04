@@ -3,7 +3,11 @@
 const app = Vue.createApp({
     methods: {
         changeInfo(event) {
-            console.log(event)
+            this.message = 'this message change'
+            this.capitalize()
+        },
+        capitalize() {
+            this.quote = this.quote.toUpperCase()
         },
     },
 
@@ -11,6 +15,7 @@ const app = Vue.createApp({
     data() {
         return {
             message: 'hello world',
+            quote: 'Life is very short',
         }
     },
 })
