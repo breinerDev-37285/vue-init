@@ -12,9 +12,9 @@
             <h3>Batman quotes</h3>
 
             <ul>
-                <li v-for="(quote, index) in quotes">
-                    <div>{{index + 1}} {{quote.quote}}</div>
-                    <blockquote>-{{quote.author}}</blockquote>
+                <li v-for="({quote, author}, index) in quotes">
+                    <div>{{index + 1}} {{quote}}</div>
+                    <blockquote>-{{author}}</blockquote>
                 </li>
             </ul>
         </div>
