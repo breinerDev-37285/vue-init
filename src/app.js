@@ -29,7 +29,16 @@ app = Vue.createApp({
     data() {
         return {
             quotes,
+            message: 'hello world',
         }
+    },
+
+    methods: {
+        addMessage() {
+            this.quote = quotes.unshift({
+                quote: this.message,
+            })
+        },
     },
 })
 

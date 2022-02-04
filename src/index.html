@@ -9,12 +9,21 @@
     </head>
     <body>
         <div id="app">
-            <h3>Batman quotes</h3>
+            <h3>Batman quotes! <small>{{message}}</small></h3>
+
+            <input
+                type="text"
+                v-model="message"
+                v-on:keypress.enter="addMessage"
+            />
+
+            <hr />
 
             <ul>
                 <li v-for="({quote, author}, index) in quotes">
-                    <div>{{index + 1}} {{quote}}</div>
-                    <blockquote>-{{author}}</blockquote>
+                    <div>{{index + 1}} - {{quote}}</div>
+                    <blockquote v-if="author">-{{author}}</blockquote>
+                    <!-- <blockquote v-show="author">-{{author}}</blockquote> -->
                 </li>
             </ul>
         </div>
